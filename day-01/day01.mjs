@@ -1,9 +1,9 @@
 import { readFileSync } from 'node:fs';
 
-const elves = readFileSync('day-01.txt', { encoding: 'utf-8' }) // read day??.txt content
-  .replace(/\r/g, '') // remove all \r characters to avoid issues on Windows
-  .trim() // Remove starting/ending whitespace
-  .split('\n\n'); // Split on newline
+const elves = readFileSync('day-01.txt', { encoding: 'utf-8' })
+  .replace(/\r/g, '')
+  .trim()
+  .split('\n\n');
 
 console.log(elves);
 
@@ -23,6 +23,7 @@ function part2() {
     return calories.reduce((previous, current) => previous + current, 0);
   });
 
+  // console.log(calories.sort((a, b) => b - a));
   calories.sort((a, b) => b - a);
 
   console.log(
